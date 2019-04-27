@@ -99,8 +99,8 @@ if ( ! class_exists( 'WooCommerce_Quantity_Increment' ) ) {
 		public function enqueue_scripts() {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			wp_enqueue_script( 'wcqi-js', plugins_url( 'assets/js/wc-quantity-increment' . $min . '.js', __FILE__ ), array( 'jquery' ) );
-			wp_enqueue_style( 'wcqi-css', plugins_url( 'assets/css/wc-quantity-increment.css', __FILE__ ) );
-			wp_register_script( 'wcqi-number-polyfill', plugins_url( 'assets/js/lib/number-polyfill.min.js', __FILE__ ) );
+			/* wp_enqueue_style( 'wcqi-css', plugins_url( 'assets/css/wc-quantity-increment.css', __FILE__ ) ); */
+			/* wp_register_script( 'wcqi-number-polyfill', plugins_url( 'assets/js/lib/number-polyfill.min.js', __FILE__ ) ); */
 		}
 
 		/**
