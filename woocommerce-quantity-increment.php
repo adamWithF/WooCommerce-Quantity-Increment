@@ -120,10 +120,11 @@ if ( ! class_exists( 'WooCommerce_Quantity_Increment' ) ) {
     $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
     // $cart_item_key = $_POST['cart_item_key'];
     $cart_item_key = (int) $_POST['product_id'];
+    $variation_id = isset($_POST['variation_id']) ? absint($_POST['variation_id']) : 0;
     $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
     $passed_validation = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
     $product_status = get_post_status($product_id);
-    $cart_item_key = get_cart_item_key($product_id);
+    $cart_item_key = get_cart_item_key($product_id, $variation_id);
 
     if ($passed_validation && WC()->cart->set_quantity($cart_item_key, $quantity, true) && 'publish' === $product_status) {
       do_action('woocommerce_cart_updated');
