@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "homepage": "https://wordpress.org/plugins/woocommerce-quantity-increment/",
   "main": "Gruntfile.js",
+  "scripts": {
+    "start": "grunt dev",
+    "prod": "grunt"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-cssmin": "~0.7.0",
